@@ -1,3 +1,3 @@
 custom:
   feign:
-    url: localhost:8763
+    url: joke-server

@@ -14,8 +14,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>joke-server</module>
-        <!--<module>joke-client</module>-->
+        <module>joke-client</module>
     </modules>
-
 
 </project>

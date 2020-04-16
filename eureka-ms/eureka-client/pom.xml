@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.deepflow</groupId>
     <artifactId>eureka-client</artifactId>
-    <version>${zhiqu.version}</version>
+    <version>1.0.0-SNAPSHOT</version>
     <name>eureka-client</name>
     <description>Eureka Client</description>
 
