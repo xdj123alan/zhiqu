@@ -4,7 +4,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
-@FeignClient(name = "DESKTOP-RS4E40E:joke-server", path = "/jokes")
+@FeignClient(name = "joke-server",url="${custom.feign.url}", path = "/jokes")
 public interface JokeClient {
 
     @GetMapping(value = "/list", consumes = MediaType.APPLICATION_JSON_VALUE)
