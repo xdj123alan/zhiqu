@@ -17,6 +17,8 @@ spring:
     active: dev
 
 feign:
+  hystrix:
+    enabled: true
   client:
     config:
       #      feignName: joke-resource
