@@ -22,6 +22,7 @@
         <module>eureka-ms</module>
         <module>joke-ms</module>
         <module>comment-ms</module>
+        <module>gatoway-zuul</module>
     </modules>
 
     <properties>
@@ -36,10 +37,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
