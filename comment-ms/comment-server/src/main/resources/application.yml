@@ -42,3 +42,8 @@ feign:
 logging:
   level:
     com.deepflow.clients.api.*: debug
+
+ribbon:
+  eager-load:
+    enabled: true
+    clients: joke-server
