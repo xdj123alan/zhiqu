@@ -16,9 +16,11 @@ spring:
 
 zuul:
   routes:
+#    joke-server:
+#      path: /jokes-server/**
+#      serviceId: jake-server
+#    comment-server:
+#      path: /comment-server/**
+#      serciceId: comment-server
     joke-server:
-      path: /jokes-server/**
-      serviceId: jake-server
     comment-server:
-      path: /comment-server/**
-      serciceId: comment-server
