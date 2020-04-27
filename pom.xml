@@ -22,7 +22,8 @@
         <module>eureka-ms</module>
         <module>joke-ms</module>
         <module>comment-ms</module>
-        <module>gatoway-zuul</module>
+        <module>gateway-zuul</module>
+        <module>uaa-ms</module>
     </modules>
 
     <properties>
