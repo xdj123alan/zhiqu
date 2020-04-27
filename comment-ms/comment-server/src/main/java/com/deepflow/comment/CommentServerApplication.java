@@ -6,7 +6,7 @@ import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 
 import com.deepflow.joke.client.annotation.JokeClientStarter;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = {"com.deepflow"})
 @JokeClientStarter
 @EnableHystrix
 public class CommentServerApplication {

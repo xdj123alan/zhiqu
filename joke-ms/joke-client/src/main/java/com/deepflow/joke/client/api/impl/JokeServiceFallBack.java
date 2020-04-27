@@ -1,7 +1,10 @@
 package com.deepflow.joke.client.api.impl;
 
+import org.springframework.stereotype.Component;
+
 import com.deepflow.joke.client.api.JokeService;
 
+@Component
 public class JokeServiceFallBack implements JokeService {
     @Override
     public String getJokes() {

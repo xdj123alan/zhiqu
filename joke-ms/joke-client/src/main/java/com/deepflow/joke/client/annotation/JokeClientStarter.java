@@ -5,12 +5,9 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-import org.springframework.context.annotation.Import;
-
-import com.deepflow.joke.client.api.impl.JokeServiceFallBack;
-import com.deepflow.joke.client.configuration.EnableFeignClientConfiguration;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-@Import({EnableFeignClientConfiguration.class, JokeServiceFallBack.class})
+@EnableFeignClients({"com.deepflow.joke.client.api"})
 public @interface JokeClientStarter {}
