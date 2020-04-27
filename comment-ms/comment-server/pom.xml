@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>comment-ms</artifactId>
@@ -9,6 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <version>${zhiqu.version}</version>
+    <groupId>com.deepflow.comment</groupId>
     <artifactId>comment-server</artifactId>
 
     <dependencies>
@@ -21,7 +22,7 @@
             <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.deepflow</groupId>
+            <groupId>com.deepflow.joke.client</groupId>
             <artifactId>joke-client</artifactId>
             <version>${zhiqu.version}</version>
         </dependency>

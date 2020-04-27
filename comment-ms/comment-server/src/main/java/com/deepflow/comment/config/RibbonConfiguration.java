@@ -1,10 +1,11 @@
-package com.deepflow.config;
+package com.deepflow.comment.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
 import com.netflix.loadbalancer.IRule;
 import com.netflix.loadbalancer.RetryRule;
 import com.netflix.loadbalancer.WeightedResponseTimeRule;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class RibbonConfiguration {

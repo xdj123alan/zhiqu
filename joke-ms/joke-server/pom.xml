@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>joke-ms</artifactId>
@@ -11,7 +11,7 @@
     <name>joke-server</name>
     <modelVersion>4.0.0</modelVersion>
     <version>${zhiqu.version}</version>
-    <groupId>com.deepflow</groupId>
+    <groupId>com.deepflow.joke</groupId>
     <artifactId>joke-server</artifactId>
     <description>Joke project for Spring Boot</description>
 

@@ -1,4 +1,4 @@
-package com.deepflow.controller;
+package com.deepflow.joke.controller;
 
 import javax.servlet.http.HttpServletRequest;
 

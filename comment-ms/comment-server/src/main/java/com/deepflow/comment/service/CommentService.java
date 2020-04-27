@@ -1,9 +1,9 @@
-package com.deepflow.service;
+package com.deepflow.comment.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.deepflow.clients.api.JokeService;
+import com.deepflow.joke.client.api.JokeService;
 
 import lombok.extern.slf4j.Slf4j;
 

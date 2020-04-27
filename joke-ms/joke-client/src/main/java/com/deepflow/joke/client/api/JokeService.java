@@ -1,11 +1,12 @@
-package com.deepflow.clients.api;
+package com.deepflow.joke.client.api;
 
-import com.deepflow.clients.api.impl.JokeServiceFallBack;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
-@FeignClient(name = "joke-server",url="${custom.feign.url}", path = "/jokes", fallback = JokeServiceFallBack.class)
+import com.deepflow.joke.client.api.impl.JokeServiceFallBack;
+
+@FeignClient(name = "joke-server", url = "${custom.feign.url}", path = "/jokes", fallback = JokeServiceFallBack.class)
 public interface JokeService {
 
     @GetMapping(value = "/list", consumes = MediaType.APPLICATION_JSON_VALUE)

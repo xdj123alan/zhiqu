@@ -1,32 +1,28 @@
-package com.deepflow.clients.api.impl;
+package com.deepflow.joke.client.api.impl;
 
-import com.deepflow.clients.api.JokeService;
-import org.springframework.stereotype.Component;
+import com.deepflow.joke.client.api.JokeService;
 
-@Component
 public class JokeServiceFallBack implements JokeService {
     @Override
     public String getJokes() {
-        return "This jokes doesn't exist";
+        return "This is a joke";
     }
 
     @Override
     public String getJokeById(String id) {
-        return "This joke doesn't exist";
+        return "";
     }
 
     @Override
-    public void deleteJokeById(String id) {
-
-    }
+    public void deleteJokeById(String id) {}
 
     @Override
     public String createJoke(String body) {
-        return null;
+        return "";
     }
 
     @Override
     public String printRequest(Integer a, Integer b) {
-        return null;
+        return "";
     }
 }
