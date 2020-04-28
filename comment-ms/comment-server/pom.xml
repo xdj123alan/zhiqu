@@ -22,6 +22,10 @@
             <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-oauth2</artifactId>
+        </dependency>
+        <dependency>
             <groupId>com.deepflow.joke.client</groupId>
             <artifactId>joke-client</artifactId>
             <version>${zhiqu.version}</version>
