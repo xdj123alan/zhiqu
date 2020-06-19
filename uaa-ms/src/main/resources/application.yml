@@ -8,9 +8,9 @@ eureka:
     perfer-in-address: true
 
 server:
-  port: 8766
+  port: 7777
   servlet:
-    context-path: /uaa      # web 的基路径
+    context-path: /uaa                                        # web 的基路径
 
 spring:
   application:

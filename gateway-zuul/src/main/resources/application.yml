@@ -8,7 +8,7 @@ eureka:
     perfer-in-address: true
 
 server:
-  port: 8765
+  port: 5555
 
 spring:
   application:
@@ -27,13 +27,12 @@ zuul:
     uaa-server:
 
 security:
-  basic: false
   oauth2:
     client:
-      access-token-uri: http://localhost:8766/uaa/oauth/token     # 令牌端点
-      user-authorization-uri: http://localhost:8766/uaa/oauth/authorize   # 授权端点
-      client-id: uaa-server         # OAuth2 客户端ID
-      client-secret: secret         # OAuth2 客户端密钥
+      access-token-uri: http://localhost:7777/uaa/oauth/token                 # 令牌端点
+      user-authorization-uri: http://localhost:7777/uaa/oauth/authorize      # 授权端点
+      client-id: zuul_server                                                  # OAuth2 客户端ID
+      client-secret: secret                                                   # OAuth2 客户端密钥
     resource:
       jwt:
-        key-value: springcloud123                                     # 使用对称加密方式, 默认算法为HS256
+        key-value: springcloud123                                             # 使用对称加密方式, 默认算法为HS256

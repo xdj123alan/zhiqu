@@ -26,17 +26,17 @@ public class OAuthConfiguration extends AuthorizationServerConfigurerAdapter {
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         clients//
             .inMemory()//
-            .withClient("zuu_server")//
+            .withClient("zuul_server")//
+            .secret("secret")//
             .scopes("WRIGTH", "read")//
             .autoApprove(true)//
+            .authorities("WRIGTH_READ", "WRIGTH_WRITE")//
             .authorizedGrantTypes("implicit", "refresh_token", "password", "authorization_code");
     }
 
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
-        endpoints//
-            .tokenStore(jwtTokenStore())//
-            .tokenEnhancer(jwtTokenConverter())//
+        endpoints.tokenStore(jwtTokenStore()).tokenEnhancer(jwtTokenConverter())
             .authenticationManager(authenticationManager);
     }
 
