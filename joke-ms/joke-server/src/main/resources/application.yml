@@ -6,6 +6,8 @@ eureka:
     lease-renewal-interval-in-seconds: 5
     lease-expiration-duration-in-seconds: 15
     perfer-in-address: true
+    metadata-map:
+      host-mark: running-host
 
 server:
   port: 8763
@@ -13,3 +15,7 @@ server:
 spring:
   application:
     name: joke-server
+
+logging:
+  level:
+    com.deepflow.joke.controller: debug
