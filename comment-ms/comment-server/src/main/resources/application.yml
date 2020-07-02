@@ -43,6 +43,7 @@ logging:
   level:
     com.deepflow.clients.api.*: debug
 
+# 开启饥饿加载: 网关一启动就去访问 eureka 获取服务注册信息(默认懒加载)
 ribbon:
   eager-load:
     enabled: true
