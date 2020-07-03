@@ -13,6 +13,10 @@ server:
 spring:
   application:
     name: gateway-zuul
+  cloud:
+    loadbalancer:
+      retry:
+        enabled: true # 内部已默认开启负载均衡
 
 zuul:
   routes:
@@ -25,6 +29,17 @@ zuul:
     joke-server:
     comment-server:
     uaa-server:
+  # 开启重试功能
+  retryable: true
+
+ribbon:
+  ConnectionTimeout: 3000
+  ReadTimeout: 10000
+  MaxAutoRetries: 10 # 对第一次请求的服务重试的次数
+  MaxAutoRetriesNexServer: 10 #要重试的下一个服务的最大数量(不包括第一个服务)
+  OkToRetryOnAllOperations: true
+#  eureka:
+#    enabled: true
 
 # TODO security does not work
 #security:
