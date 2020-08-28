@@ -24,6 +24,7 @@
         <module>comment-ms</module>
         <module>gateway-zuul</module>
         <module>uaa-ms</module>
+        <module>gateway</module>
     </modules>
 
     <properties>
