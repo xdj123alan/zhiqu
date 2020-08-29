@@ -1,4 +1,4 @@
-package com.deepflow.zuul.Filter;
+package com.deepflow.zuul.filter;
 
 import static org.springframework.cloud.netflix.zuul.filters.support.FilterConstants.*;
 
