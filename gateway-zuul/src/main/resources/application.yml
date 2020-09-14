@@ -1,14 +1,14 @@
 eureka:
   client:
-    serverUrl:
-      defaultZone: http://localhost:8761/eureka/
+    server-url:
+      defaultZone: http://localhost:15002/eureka/
   instance:
     lease-renewal-interval-in-seconds: 5
     lease-expiration-duration-in-seconds: 15
     perfer-in-address: true
 
 server:
-  port: 5555
+  port: 15000
 
 spring:
   application:
