@@ -19,6 +19,12 @@ public class CommentController {
     @Autowired
     private CommentService commentService;
 
+    @GetMapping("/detail/{id}")
+    public String getCommentDetails(@PathVariable("id") String id) {
+        log.debug("Get comment by id [{}]", id);
+        return id;
+    }
+
     @GetMapping("/{id}")
     public String getComments(@PathVariable("id") String id) {
         log.debug("Get comment by id [{}]", id);
