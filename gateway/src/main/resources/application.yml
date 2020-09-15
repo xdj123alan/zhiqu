@@ -8,11 +8,25 @@ spring:
           enabled: true     # 开启基于服务发现的路由规则
           lower-case-service-id: true   # 开启小写的 serviceId 进行基于服务路由的转发
       routes:
-      # 路由集群内其他服务,url需要用[lb://]+[serviceId]
-        - id: comment-server
-          uri: lb://comment-server
-          predicates:
-             - Path=/comment-server
+      - id: comment-server
+        uri: lb://comment-server
+        predicates:
+        - Path=/comment-server # 路由集群内其他服务,url需要用[lb://]+[serviceId]
+      # Host 路由断言工厂
+      - id: host_route
+        uri: https://blog.csdn.net/zjhcxdj/category_9771365.html
+        predicates:
+        - Host=**.csdn.**:15000 # 请求域名中携带 csdn,则转发
+      # Query 路由断言工厂
+      - id: query_route
+        uri: https://blog.csdn.net/zjhcxdj/article/details/106992956
+        predicates:
+        - Query=username,zzz # 请求参数含有username,且值为zzz
+      # Header 路由断言工厂
+      - id: header_route
+        uri: https://blog.csdn.net/zjhcxdj/article/details/105631321
+        predicates:
+        - Header=request, \d+ # 如果请求头含有request,且为数字,则转发
     loadbalancer:
       retry:
         enabled: true # 内部已默认开启负载均衡
