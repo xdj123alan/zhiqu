@@ -9,16 +9,22 @@ import org.springframework.web.bind.annotation.RestController;
 import com.deepflow.comment.service.CommentService;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import lombok.extern.slf4j.Slf4j;
 
 @RestController
 @RequestMapping("/comments")
 @Slf4j
+@Api("comments")
 public class CommentController {
 
     @Autowired
     private CommentService commentService;
 
+    @ApiOperation(value = "获取评论详情", notes = "根据评论 id 获取详情")
+    @ApiParam(value = "评论id")
     @GetMapping("/detail/{id}")
     public String getCommentDetails(@PathVariable("id") String id) {
         log.debug("Get comment by id [{}]", id);

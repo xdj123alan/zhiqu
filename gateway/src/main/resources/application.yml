@@ -8,20 +8,23 @@ spring:
           enabled: true     # 开启基于服务发现的路由规则
           lower-case-service-id: true   # 开启小写的 serviceId 进行基于服务路由的转发
       routes:
-      - id: comment-server
-        uri: lb://comment-server
+      - id: comment_server_route
+        uri: lb://comment-server # 路由集群内其他服务,url需要用[lb://]+[serviceId]
         predicates:
-        - Path=/comment-server # 路由集群内其他服务,url需要用[lb://]+[serviceId]
+        - Path=/comment/**
+        filters:
+        - SwaggerHeaderFilter
+        - StripPrefix=1
       # Host 路由断言工厂
       - id: host_route
         uri: https://blog.csdn.net/zjhcxdj/category_9771365.html
         predicates:
         - Host=**.csdn.**:15000 # 请求域名中携带 csdn,则转发
       # Query 路由断言工厂
-      - id: query_route
-        uri: https://blog.csdn.net/zjhcxdj/article/details/106992956
-        predicates:
-        - Query=username,zzz # 请求参数含有username,且值为zzz
+      #      - id: query_route
+      #        uri: https://blog.csdn.net/zjhcxdj/article/details/106992956
+      #        predicates:
+      #        - Query=username,zzz # 请求参数含有username,且值为zzz
       # Header 路由断言工厂
       - id: header_route
         uri: https://blog.csdn.net/zjhcxdj/article/details/105631321
