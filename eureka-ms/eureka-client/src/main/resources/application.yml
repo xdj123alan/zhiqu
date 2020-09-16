@@ -8,7 +8,7 @@ eureka:
     perfer-in-address: true
 
 server:
-  port: 8762
+  port: 15004
 
 spring:
   application:
