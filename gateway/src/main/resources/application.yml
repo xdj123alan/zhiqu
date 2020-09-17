@@ -15,6 +15,13 @@ spring:
         filters:
         - SwaggerHeaderFilter
         - StripPrefix=1
+      - id: joke_server_route
+        uri: lb://joke-server # 路由集群内其他服务,url需要用[lb://]+[serviceId]
+        predicates:
+        - Path=/joke/**
+        filters:
+        - SwaggerHeaderFilter
+        - StripPrefix=1
       # Host 路由断言工厂
       - id: host_route
         uri: https://blog.csdn.net/zjhcxdj/category_9771365.html

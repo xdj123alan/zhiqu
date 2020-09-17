@@ -9,9 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.deepflow.comment.service.CommentService;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiParam;
+import io.swagger.annotations.*;
 import lombok.extern.slf4j.Slf4j;
 
 @RestController
@@ -31,18 +29,26 @@ public class CommentController {
         return id;
     }
 
+    @ApiOperation(value = "获取评论", notes = "根据评论 id 获取评论")
+    @ApiParam(value = "评论id")
     @GetMapping("/{id}")
     public String getComments(@PathVariable("id") String id) {
         log.debug("Get comment by id [{}]", id);
         return commentService.getComment(id);
     }
 
+    @ApiOperation(value = "获取笑话服务端口号", notes = "根据传入的参数 a 和 b 获取笑话端口号")
+    @ApiImplicitParams(//
+    {@ApiImplicitParam(value = "参数a"), //
+        @ApiImplicitParam("参数b")})
     @GetMapping("/ports")
     public String getJokePort(Integer a, Integer b) {
         log.debug("Get joke port a [{}] b [{}]", a, b);
         return commentService.getJokePort(a, b);
     }
 
+    @ApiOperation(value = "获取用户名字")
+    @ApiParam(value = "用户名字")
     @HystrixCommand(fallbackMethod = "defaultUser")
     @GetMapping("/user/{name}")
     public String getUser(@PathVariable("name") String username) throws Exception{
